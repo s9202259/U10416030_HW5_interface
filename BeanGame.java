@@ -26,6 +26,11 @@ public class BeanGame extends Application{
 			Line lineRight = new Line(360, 450, 360, 20);
 			lineRight.setStrokeWidth(5);
 			
+			Line topLine1 = new Line(60, 20, 190, 120);	//上面兩條斜線
+			topLine1.setStrokeWidth(5);
+			Line topLine2 = new Line(230, 120, 360, 20);
+			topLine2.setStrokeWidth(5);
+			
 			Line line1 = new Line(110, 450, 110, 320);	//分割線 1~6
 			line1.setStrokeWidth(3);
 			Line line2 = new Line(150, 450, 150, 320);
@@ -67,7 +72,7 @@ public class BeanGame extends Application{
 			Circle circle6_6 = new Circle(310, 305, 8);
 		
 			this.getChildren().addAll(buttonLine, line1, line2, line3, line4, line5, 
-						line6, lineLeft, lineRight);
+						line6, lineLeft, lineRight, topLine1, topLine2);
 			this.getChildren().addAll(circle6_1, circle6_2, circle6_3, circle6_4, circle6_5, circle6_6,
 						circle5_1, circle5_2, circle5_3, circle5_4, circle5_5,
 						circle4_1, circle4_2, circle4_3, circle4_4,
