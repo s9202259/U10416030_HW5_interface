@@ -1,37 +1,32 @@
+//U10416030 陳子勤
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.shape.*;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 
-public class BeanGame extends JFrame{
-	static JFrame myFrame = new BeanGame();
-	
-	public BeanGame() {
-		JLabel label = new JLabel();
-		label.setIcon(new ImageIcon("C:/Image/BeanGame.png"));
-		label.setPreferredSize(new Dimension(330, 450));
-		paint(100, 200);
+public class BeanGame extends Application{
+	@Override
+	public void start(Stage primaryStage){
+		Scene scene = new Scene(new InterFace(), 420, 500);
 		
-		this.add(label);
-		this.pack();
+		primaryStage.setTitle("U10416030 陳子勤");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	
-	public static void main(String[] args) {
-		myFrame.setSize(500, 500);
-		myFrame.setResizable(false);
-		myFrame.setVisible(true);
+	class InterFace extends Pane {
+		InterFace() {
+			Line buttonLine = new Line(60, 450, 360, 450);		
+			buttonLine.setStrokeWidth(5);
 		
-		myFrame.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent e) {
-				System.exit(0);
-			}
-		});
-	}
-	
-	public static void paint(int x, int y) {
-		Graphics g = myFrame.getGraphics();
-		g.setColor(Color.red);
-		g.fillOval(x, y, 10, 10);
-	}
+			Line lineLeft = new Line(60, 450, 60, 20);
+			lineLeft.setStrokeWidth(5);
+			Line lineRight = new Line(360, 450, 360, 20);
+			lineRight.setStrokeWidth(5);
+			
+			getChildren().addAll(buttonLine, lineLeft, lineRight);
+		}
+	}		
 }
